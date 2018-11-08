@@ -32,6 +32,8 @@ text and returns the scrambled text. To make the problem a bit more fun:
 
   * Preserve the case of alphabetic characters e.g. 'Steve' becomes 'Cweze'.
 
+Here's a template to start with - and you can also use [scramble.py](Python3/scramble.py) from this repo.
+
 ```python
 def scramble( *, secret, plaintext ):
     """
