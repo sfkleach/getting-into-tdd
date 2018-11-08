@@ -16,7 +16,7 @@ There are a variety of problems to work on. These are presented in Python3 as th
 
 The idea of the problems is that they are just difficult enough that they need at least several scenarios to drive the development. Until I run the workshop I won't know whether they are too hard for the time available or not. However you will need to be comfortable programming with Python3 and have some kind of unit-testing environment available.
 
-  * [Scramble](Python3/scramble.py) with bonus problem [Unscramble](Python3/unscramble.py)
+  * [Scramble](Scramble.md) with bonus problem [Unscramble](Python3/unscramble.py)
 
   * [Resistances](Python3/resistance.py) with bonus problem [ResistanceIsUseless](Python3/resistanceisuseless.py)
 
