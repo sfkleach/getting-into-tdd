@@ -22,7 +22,7 @@ The idea of the problems is that they are just difficult enough that they need a
 
   * [Nucleotide Stats](Python3/nucleotide.py) with hard bonus problem [Max-Repeats](Python3/maxrepeats.py)
 
-  * [Kapreker Sequences](Python3/kaprekersequences.py)
+  * [Kapreker Sequences](Python3/kaprekarsequences.py)
 
   * [Macros](Python3/macros.py) which comes with bonus subproblem!
 
