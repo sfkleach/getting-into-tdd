@@ -1,3 +1,8 @@
+######################################################################
+# Standard Python .gitignore
+# - see the end for local modifications
+######################################################################
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -102,3 +107,16 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+######################################################################
+# Local modifications
+######################################################################
+venv/
+/Getting into Test Driven Development.gslides
+/Python3/.idea/Python3.iml
+/Python3/.idea/codeStyles/codeStyleConfig.xml
+/Python3/.idea/misc.xml
+/Python3/.idea/modules.xml
+/Python3/.idea/workspace.xml
+/Python3/.idea/vcs.xml
+/Python3/.idea/
