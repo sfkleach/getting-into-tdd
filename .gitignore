@@ -111,7 +111,6 @@ venv.bak/
 ######################################################################
 # Local modifications
 ######################################################################
-venv/
 /Getting into Test Driven Development.gslides
 /Python3/.idea/Python3.iml
 /Python3/.idea/codeStyles/codeStyleConfig.xml
@@ -120,3 +119,4 @@ venv/
 /Python3/.idea/workspace.xml
 /Python3/.idea/vcs.xml
 /Python3/.idea/
+/Python3/spike/
