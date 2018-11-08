@@ -18,3 +18,11 @@ The idea of the problems is that they are just difficult enough that they need a
 
   * [Scramble](Python3/scramble.py) with bonus problem [Unscramble](Python3/unscramble.py)
 
+  * [Resistances](Python3/resistance.py) with bonus problem [ResistanceIsUseless](Python3/resistanceisuseless.py)
+
+  * [Nucleotide Stats](Python3/nucleotide.py) with hard bonus problem [Max-Repeats](Python3/maxrepeats.py)
+
+  * [Kapreker Sequences](Python3/kaprekersequences.py)
+
+  * [Macros](Python3/macros.py) which comes with bonus subproblem!
+
