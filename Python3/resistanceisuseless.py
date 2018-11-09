@@ -28,6 +28,7 @@ you need to decide how to represent those values and make sure that
 your series and parallel computations work properly with them.
 """
 
+
 def xresistance( x ):
     """
     Given an XML element x returns the overall resistance. If the element does

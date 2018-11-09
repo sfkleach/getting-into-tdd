@@ -53,10 +53,11 @@ decision on what to do and implement it:
 
 """
 
+
 def applyMacros( template, macros ):
     """
     Apply a set of macros to a template string.
-    :param template_string: The string to have substitutions applied.
+    :param template: The string to have substitutions applied.
     :param macros: Keyword arguments that define the macros.
     :return:
     """

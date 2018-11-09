@@ -4,6 +4,7 @@ scrambled text (the 'ciphertext') and the original secret, return the
 original plaintext.
 """
 
+
 def unscramble( *, secret, ciphertext ):
     """
     Given a previously scrambled message, recover the original text using

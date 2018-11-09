@@ -34,6 +34,7 @@ until a fix-point is reached. So the above example would return
 
 """
 
+
 def kaprekarsSequence( N ):
     """
     Given a number with up to 4 digits, return the convergence sequence

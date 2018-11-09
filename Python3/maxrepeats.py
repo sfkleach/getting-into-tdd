@@ -14,6 +14,7 @@ Because there many be many equally long sub-strings that fit this, the
 result should be a generator for all the possible candidates.
 """
 
+
 def maxrepeats( *, dna ):
     """
     Given a string, find the longest sub-strings that occur in more than

@@ -117,6 +117,7 @@ ccaacattacccggtatgacaaaatgacgccacgtgtcgaataatggtctgaccaatgta
 ggaagtgaaaagataaatat
 '''.replace( '\n', '' )
 
+
 def tableOfSubsequences( *, dna, length ):
     """
     Compute the frequency distribution of subsequences of a given length in a

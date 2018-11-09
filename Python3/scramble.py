@@ -91,6 +91,7 @@ Graded Scenarios
 
 """
 
+
 def scramble( *, secret, plaintext ):
     """
     Take two mandatory named parameters, a secret and some plaintext to
