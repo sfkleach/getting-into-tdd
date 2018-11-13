@@ -264,7 +264,7 @@ def transform( ch, *, secret ):
 
 ## Scenario 5: Sad Paths
 
-Finally we wrap up with the [sad-paths](HappyAndSadPath.md), the unfortunate pathways through the 
+Finally we wrap up with the [sad-paths](HappyAndSadPaths.md), the unfortunate pathways through the 
 code that happen when assumptions about normal use are violated.
 
   * What happens if secret isn't 26 long?
@@ -273,6 +273,81 @@ code that happen when assumptions about normal use are violated.
 
 Time to make some decisions!
 
-### Valid Secret
+### Checking that the Secret is Valid
+
+The implementation that is sketched out above (yours might be different) relies
+on the secret being at least 26 letters long. And if we are to have any hope
+that the ciphertext can be unscrambled, the secret string should really be a 
+[permutation](https://en.wikipedia.org/wiki/Permutation) of the lowercase 
+letters of the alphabet.
+
+Checking the length is nice and quick but doing a permutation check takes more
+effort. You might write something like this:
+
+```python
+# Get list of single charater strings in alphabetic order.
+_alphabet = [ chr(i) for i in range( ord('a'), ord('z') + 1 ) ]
+
+def checkSecretIsValid( *, secret ):
+    # sorted will return a list of single-letter strings.
+    if sorted( secret ) == _alphabet:
+        return secret
+    else:
+        raise Exception( 'Invalid secret supplied: {}'.format( secret ) )
+```
+
+In this case we have made the decision that if the secret isn't correct, we 
+will raise an exception. The scenarios to drive this test should include 
+secrets with too few letters, another with some repeated letters, another with
+non-alphabetic letters, and any other situation that springs to mind as 
+interesting.
+
+### Checking the plaintext is a string
+
+What if the plaintext isn't a string? If we look at our implementation we can
+see that the only expectation is that it is iterable - and that the iterator
+returns values that ```ord``` can deal with, which is a single character. The
+```ord``` function itself will raise an exception if anything else is supplied.
+
+So is there really any benefit in changing the implementation? Only if we want
+to take control of the detail of the exception. So maybe this is a case where 
+we can leave sleeping dogs lie.
+
+
+# Closing Question
+
+Checking the length is nice and quick but doing a permutation check takes more
+effort. So you shouldn't want to do that check very often. This suggests that 
+maybe we should rewrite the whole program as a class with the secret being a 
+private member checked in the constructor. Something like this:
+
+```python
+class Scrambler:
+
+    def __init__( self, *, secret ):
+        self._secret = checkSecretIsValid( secret )
+
+    def transform( self, ch ):
+        if ch.isupper():
+            return self.transform( ch.lower() ).upper()
+        else:
+            try:
+                return self._secret[ ord( ch ) - ord( 'a' ) ]
+            except IndexError:
+                return ch
+
+    def scramble( self, plaintext ):
+        return ''.join( [ self.transform( ch ) for ch in plaintext ] )
+       
+def scramble( self, *, secret, plaintext ):
+    return Scrambler( secret ).scramble( plaintext )
+```
+
+This really is a lot neater. But changing from where we ended up to the above 
+implementation is potentially quite a hassle. If only we could have looked ahead 
+and noticed that a class-based implementation is the way to go. What clues are
+there, that we could have noticed, that we need a class to wrap up the secret?
+
+
 
 
