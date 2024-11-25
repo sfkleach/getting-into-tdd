@@ -91,6 +91,8 @@ Graded Scenarios
 
 """
 
+secret = 'bsgueinjrlkotymqdfcwxzvaph'
+
 
 def scramble( *, secret, plaintext ):
     """
@@ -101,3 +103,12 @@ def scramble( *, secret, plaintext ):
     :return: The scrambled text.
     """
     pass
+
+_alphabet = [ chr(i) for i in range( ord('a'), ord('z') + 1 ) ]
+
+def checkSecretIsValid( *, secret ):
+    # sorted will return a list of single-letter strings.
+    if sorted( secret ) == _alphabet:
+        return secret
+    else:
+        raise Exception( 'Invalid secret supplied: {}'.format( secret ) )

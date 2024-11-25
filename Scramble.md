@@ -300,7 +300,24 @@ In this case we have made the decision that if the secret isn't correct, we
 will raise an exception. The scenarios to drive this test should include 
 secrets with too few letters, another with some repeated letters, another with
 non-alphabetic letters, and any other situation that springs to mind as 
-interesting.
+interesting. For example:
+
+```python
+import pytest
+@pytest.mark.parametrize( 
+    "bad_secret", 
+    [
+        ( "" ),
+        ( "abcdeffghijklmnopqrstuvwxyz" ),
+        ( "AbcdefghijklmnopqrstuvwxyZ" )
+    ] 
+)
+def test_checkSecretIsValid( bad_secret ):
+    with pytest.raises(Exception) as e:
+        checkSecretIsValid( secret=bad_secret )
+```
+
+
 
 ### Checking the plaintext is a string
 
